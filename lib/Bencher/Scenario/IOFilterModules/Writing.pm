@@ -66,16 +66,14 @@ _
     ],
 
     # generate datasets
-    before_list_datasets => sub {
+    before_parse_datasets => sub {
         my %args = @_;
         my $scenario = $args{scenario};
-        my $seq = 0;
         for my $chunk_size (0, 1, 1024) {
             my ($fh, $filename) = tempfile();
             push @{ $scenario->{datasets} }, {
                 name => "chunk_size=$chunk_size",
                 args => {chunk_size => $chunk_size, tempfile => $filename},
-                seq => $seq++,
             };
         }
     },
