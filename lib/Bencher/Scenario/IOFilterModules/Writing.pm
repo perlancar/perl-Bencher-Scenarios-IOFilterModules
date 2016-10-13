@@ -21,6 +21,17 @@ _
 
     participants => [
         {
+            module => 'Text::OutputFilter',
+            code_template => <<'_',
+open *FH0, ">", <tempfile> or die "Can't open: $!";
+tie  *FH , "Text::OutputFilter", 0, *FH0, sub { $_[0] };
+my $chunk = "a" x <chunk_size>;
+for (1..1000) { print FH $chunk }
+close FH;
+die "Incorrect file size" unless (-s <tempfile>) == <chunk_size> * 1000;
+_
+        },
+        {
             module => 'Tie::Handle::Filter',
             code_template => <<'_',
 open *FH0, ">", <tempfile> or die "Can't open: $!";
