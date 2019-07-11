@@ -1,4 +1,4 @@
-0.003   2017-01-25 (PERLANCAR)
+0.003   2017-01-25  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -7,11 +7,11 @@
           type=x_benchmarks.
 
 
-0.002   2016-10-13 (PERLANCAR)
+0.002   2016-10-13  Released-By: PERLANCAR
 
         - Add participant: Text::OutputFilter (still outputs warnings though).
 
 
-0.001   2016-10-12 (PERLANCAR)
+0.001   2016-10-12  Released-By: PERLANCAR
 
         - First release.
