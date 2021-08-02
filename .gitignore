@@ -2,3 +2,4 @@ Bencher-Scenarios-IOFilterModules-*
 .build
 *~
 nytprof*
+.DS_Store
